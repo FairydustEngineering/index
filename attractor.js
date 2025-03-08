@@ -57,13 +57,13 @@ function draw() {
   if (frameCount === 1) {
     ACTIVE_POINTS_PERCENT = 0.0002;
   }
-  if (frameCount === 387) {
+  if (frameCount === 287) {
     ACTIVE_POINTS_PERCENT = 0.01;
   }
-  if (frameCount === 390) {
+  if (frameCount === 290) {
     ACTIVE_POINTS_PERCENT = 0.12;
   }
-  if (frameCount === 396) {
+  if (frameCount === 296) {
     ACTIVE_POINTS_PERCENT = 0.00025;
   }
   // if (frameCount < 90 && frameCount > 60) {
