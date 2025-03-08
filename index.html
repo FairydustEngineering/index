@@ -1,20 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="theme-color" content="#f7ca45" />
-    <title>Fairydust Engineering</title>
-    <meta name="description" content="Chaos Communication Labs">
-
-    <link rel="preconnect" href="https://fonts.bunny.net" />
-    <link
-      href="https://fonts.bunny.net/css?family=space-mono:400i,700"
-      rel="stylesheet"
-    />
-
-    <link rel="me" href="https://chaos.social/@LuaSolDel">
+    <meta name="theme-color" content="#030712" />
+    <title>fairydust.engineering</title>
+    <meta name="description" content="chaos communication labs" />
   </head>
   <body>
     <style>
@@ -58,42 +50,53 @@
         isolation: isolate;
       }
 
+      /* space-grotesk-latin-wght-normal */
+      /* @font-face {
+        font-family: "Space Grotesk Variable";
+        font-style: normal;
+        font-display: auto;
+        font-weight: 300 700;
+        src: url(https://cdn.jsdelivr.net/fontsource/fonts/space-grotesk:vf@latest/latin-wght-normal.woff2)
+          format("woff2-variations");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      } */
+
       html {
-        color: #111111;
-        font-family: "Space Mono", monospace;
-        background-color: #f7cb45;
+        color: #edeef0;
+        font-family: "Space Grotesk Variable", sans-serif;
+        font-feature-settings: "ss01";
+        /* font-variant-alternates: styleset(ss01); */
+        background-color: oklch(0.13 0.028 261.692);
       }
       main {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 90svh;
+        z-index: 10;
       }
-      main div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+      #bgCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -10;
       }
-      h1 {
-        margin-bottom: 12px;
-        font-weight: 700;
-        line-height: 1;
-        font-size: 3rem;
-      }
-      span {
-        margin-left: 6px;
-        font-weight: 400;
-        font-style: italic;
-        font-size: 1rem;
-        letter-spacing: 10%;
+      #wordmark {
+        max-width: 250px;
+        margin-top: 339px;
+        margin-left: 77px;
+        opacity: 1;
       }
     </style>
 
     <main>
-      <div>
-        <h1>Fairydust <br />Engineering</h1>
-        <span>&gt; Chaos Communication Labs</span>
-      </div>
+      <img id="wordmark" src="./feee.svg" />
     </main>
+    <canvas id="bgCanvas"></canvas>
   </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.2/lib/p5.min.js"></script>
+  <script src="attractor.js"></script>
 </html>
